@@ -2,68 +2,80 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Join us in saving snails and protecting nature. Your small contribution can make a big difference.">
-    <title>SaveTheSnail 🐌</title>
-    <style>
-        body {
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 0;
-            background: #f2f2f2;
-            color: #333;
-        }
-
-        header {
-            background: #228B22;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        section {
-            padding: 20px;
-            background: white;
-            margin: 0 auto;
-            max-width: 1200px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        h2 {
-            color: #228B22;
-        }
-
-        p {
-            font-size: 1.2em;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SaveTheSnail - A Genius Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
+    <img src="snail.webp" alt="Snail Background" class="background-image" />
+    <div class="overlay"></div>
     <header>
         <h1>SaveTheSnail 🐌</h1>
-        <p>Protecting Nature, One Snail at a Time</p>
     </header>
-
-    <section>
-        <h2>Our Mission</h2>
-        <p>Snails play an important role in our ecosystem, but they are often overlooked and harmed by human activity.
-            Our mission is to raise awareness and take action to protect these tiny creatures that help maintain the
-            balance of nature.</p>
-
-        <h2>How You Can Help</h2>
-        <p>Your support can make a big difference. By donating, you help fund awareness campaigns, education, and safe
-            spaces for snails. Together, we can ensure that snails continue to thrive in a safe and protected
-            environment.</p>
-
-        <h2>Contact</h2>
-        <p><a href="mailto:savethesnailcom@gmail.com">savethesnailcom@gmail.com</a></p>
-    </section>
-
+    <div class="content">
+        <h1>A Silent Journey of the Smallest Ones</h1>
+        <p>
+            Every step tells a story. Dare to wander into the world of snails and discover the genius in slowing down.
+            Join us in protecting these gentle creatures and learn how every small action can make a significant impact.
+        </p>
+        <button class="cta-button" onclick="openModal()">Donate Now</button>
+    </div>
+    <footer>
+        &copy; 2025 SaveTheSnail. All rights reserved. | Contact: <a
+            href="mailto:savethesnailcom@gmail.com">savethesnailcom@gmail.com</a>
+    </footer>
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <button class="cancel-btn" onclick="closeModal()">×</button>
+            <h2>Donate Cryptocurrencies</h2>
+            <div class="address-row">
+                <div class="address-label">
+                    <strong>BTC:</strong>
+                </div>
+                <input type="text" value="bc1qejunnpdkp4q29r7yylhxtzu2e80kq04euer626" readonly onclick="this.select();">
+            </div>
+            <div class="address-row">
+                <div class="address-label">
+                    <strong>USDT:</strong>
+                    <span class="chip">TRC-20</span>
+                </div>
+                <input type="text" value="TCnf1wCLMKywSdi2YVELVPaRfFmgmNhFo4" readonly onclick="this.select();">
+            </div>
+            <div class="address-row">
+                <div class="address-label">
+                    <strong>ETH:</strong>
+                    <span class="chip">ERC-20</span>
+                </div>
+                <input type="text" value="0xc9c12FD42908e7f2585c5Dbb9B3435419D5f9138" readonly onclick="this.select();">
+            </div>
+            <div class="address-row">
+                <div class="address-label">
+                    <strong>USDC:</strong>
+                    <span class="chip">SPL</span>
+                </div>
+                <input type="text" value="9zWBAtneWggYNtzTq8qYAqBNdHSBhENDUSFsRMg3g4QU" readonly
+                    onclick="this.select();">
+            </div>
+            <button class="close-btn" onclick="closeModal()">Close</button>
+        </div>
+    </div>
+    <script>
+        function openModal() {
+            document.getElementById('donationModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('donationModal').style.display = 'none';
+        }
+        window.addEventListener('click', function (event) {
+            var modal = document.getElementById('donationModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 
 </html>
